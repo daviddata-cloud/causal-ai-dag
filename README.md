@@ -1,4 +1,4 @@
-# causal-ai-dag
+[make_pandemic_whatif_dag.py](https://github.com/user-attachments/files/29167170/make_pandemic_whatif_dag.py)# causal-ai-dag
 Causal AI with DAGs — discovery, intervention, and counterfactual what-if simulation (PCMCI, do-calculus)
 
 # Causal AI: discovery, intervention, and counterfactual what-ifs
@@ -9,7 +9,8 @@ Causal AI with DAGs — discovery, intervention, and counterfactual what-if simu
 > just *what* will happen, but *what causes it*, and *what happens if we
 > intervene*.
 
-![One causal simulation engine, many domains](images/causal_engine_domains.png)
+<img width="1635" height="1184" alt="causal_engine_domains" src="https://github.com/user-attachments/assets/50bbf841-2ce4-4646-8574-7776b7ecdb68" />
+
 
 ## What this is
 
@@ -66,11 +67,79 @@ structure. See the overview diagram above.
 
 **Pandemic what-if** — equity falls and credit spreads widen as severity rises:
 
-![Pandemic stress test](images/pandemic_whatif_chart.png)
+<img width="1483" height="881" alt="pandemic_whatif_chart" src="https://github.com/user-attachments/assets/800f9b1e-502b-4b83-a170-c560c0ca636a" />
 
 **Discovered causal graph** — PCMCI recovers the structure directly from data:
 
-![Discovered causal graph](images/pcmci_clean_graph.png)
+<img width="1380" height="1062" alt="pcmci_clean_graph" src="https://github.com/user-attachments/assets/ddbcf9f9-78e1-4562-bace-8dd96b3d886b" />
+
+[Uploading make_pande"""
+make_pandemic_whatif_dag.py -> pandemic_whatif_dag.png
+Run:  python make_pandemic_whatif_dag.py
+"""
+import matplotlib.pyplot as plt
+from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
+from matplotlib.lines import Line2D
+
+fig, ax = plt.subplots(figsize=(13, 8.5))
+ax.set_xlim(0, 13); ax.set_ylim(0, 9); ax.axis("off")
+
+C = {"shock": "#A32D2D", "real": "#BA7517", "fin": "#1D9E75", "outcome": "#378ADD"}
+
+N = {
+    "pand":  (6.5, 8.0, "Pandemic shock", "do( ) inject here", "shock"),
+    "mob":   (3.0, 6.2, "Mobility drop", "lockdowns", "real"),
+    "fear":  (10.0, 6.2, "Market fear", "VIX spike", "fin"),
+    "econ":  (3.0, 4.2, "Economic activity", "contraction", "real"),
+    "liq":   (10.0, 4.2, "Liquidity", "funding stress", "fin"),
+    "earn":  (3.0, 2.2, "Corporate earnings", "fall", "real"),
+    "credit":(6.5, 2.2, "Credit spreads", "widen", "fin"),
+    "equity":(10.0, 2.2, "Equity prices", "OUTCOME", "outcome"),
+}
+W, Hh = 2.5, 1.0
+def node(k):
+    x,y,t,s,r = N[k]
+    ax.add_patch(FancyBboxPatch((x-W/2,y-Hh/2),W,Hh,
+        boxstyle="round,pad=0.04,rounding_size=0.12",
+        facecolor=C[r], edgecolor="black", linewidth=0.9, zorder=3))
+    ax.text(x,y+0.13,t,ha="center",va="center",fontsize=10.5,
+            fontweight="bold",color="white",zorder=4)
+    ax.text(x,y-0.22,s,ha="center",va="center",fontsize=8.5,
+            color="white",zorder=4)
+
+E = [("pand","mob"),("pand","fear"),("mob","econ"),("econ","earn"),
+     ("econ","credit"),("fear","liq"),("liq","credit"),
+     ("earn","equity"),("credit","equity"),("fear","equity")]
+for src,dst in E:
+    x1,y1 = N[src][0], N[src][1]
+    x2,y2 = N[dst][0], N[dst][1]
+    ax.add_patch(FancyArrowPatch((x1,y1),(x2,y2),
+        arrowstyle="-|>", mutation_scale=15, color=C[N[src][4]],
+        linewidth=2.4, alpha=0.65, shrinkA=30, shrinkB=30,
+        connectionstyle="arc3,rad=0.05", zorder=1))
+
+for k in N: node(k)
+
+ax.text(6.5, 0.55,
+    "What-if (from data):  severity 0.5 → equity −0.87,  severity 1.0 → equity −1.73\n"
+    "as severity rises, equity falls and credit spreads widen, together",
+    ha="center", va="center", fontsize=10,
+    bbox=dict(boxstyle="round,pad=0.5", fc="#EEEDFE", ec="#7F77DD", lw=1))
+
+legend = [
+    Line2D([0],[0],marker="s",color="w",markerfacecolor=C["shock"],markersize=13,label="injected shock"),
+    Line2D([0],[0],marker="s",color="w",markerfacecolor=C["real"],markersize=13,label="real economy"),
+    Line2D([0],[0],marker="s",color="w",markerfacecolor=C["fin"],markersize=13,label="financial system"),
+    Line2D([0],[0],marker="s",color="w",markerfacecolor=C["outcome"],markersize=13,label="market outcome"),
+]
+ax.legend(handles=legend, loc="upper left", frameon=False,
+          fontsize=9.5, ncol=4, bbox_to_anchor=(0.05, 1.0))
+
+ax.set_title("Counterfactual stress test: if another pandemic hits, how does it reach the markets?",
+             fontsize=13, pad=26)
+plt.tight_layout()
+plt.savefig("pandemic_whatif_dag.png", dpi=150, bbox_inches="tight")
+print("Saved pandemic_whatif_dag.png")mic_whatif_dag.py…]()
 
 ## Run it
 
