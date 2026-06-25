@@ -1,5 +1,5 @@
 [make_pandemic_whatif_dag.py](https://github.com/user-attachments/files/29167170/make_pandemic_whatif_dag.py)# causal-ai-dag
-Causal AI with DAGs — discovery, intervention, and counterfactual what-if simulation (PCMCI, do-calculus)
+Causal AI with DAGs — discovery, intervention, and counterfactual what-if simulation (PCMCI, do-calculus). Note: dummy/public/synthetic data only in this project.
 
 # Causal AI: discovery, intervention, and counterfactual what-ifs
 
