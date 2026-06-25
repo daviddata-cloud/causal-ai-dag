@@ -76,6 +76,8 @@ structure. See the overview diagram above.
 
 <img width="1935" height="1259" alt="pandemic_whatif_dag" src="https://github.com/user-attachments/assets/0eb1e5a5-b6fd-49dd-989b-067d2eb4fe4a" />
 
+<img width="1600" height="900" alt="image" src="https://github.com/user-attachments/assets/87dc2b6f-4c9d-4630-b21e-c87327035419" />
+
 ## Run it
 
 ```bash
