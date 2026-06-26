@@ -1,3 +1,35 @@
+## Overview: from causal AI to a coordinated agent colony
+
+This work sits at the meeting point of three ideas:
+
+**1. Causal AI (the foundation).** Classic causal inference — Directed Acyclic 
+Graphs (DAGs), the do() operator, counterfactuals — answers the question 
+prediction can't: not just *what* will happen, but *what causes it* and *what 
+happens if we intervene*. This is well-established (Pearl, PCMCI, DoWhy) and 
+it is the reasoning that policy, risk, and oversight actually need.
+
+**2. Today's AI (one large model).** Most current systems lean on a single 
+large LLM — powerful, but a "lone wolf": it does everything, is expensive to 
+run for every task, and is hard to audit step by step.
+
+**3. The next step (a coordinated agent colony).** Inspired by how ant colonies 
+and wolf packs organize *specialized roles* for efficiency, this approach uses 
+a **team** of focused agents — each a small, fine-tuned model doing one job — 
+coordinated by a management agent, with a human at the final gate. The graph 
+*describes* relationships, Operations Research *optimizes* how scarce expert 
+time is spent, and causal AI *tests* whether a relationship is credible. 
+Together, small specialized agents are more efficient and more auditable than 
+one large black box.
+
+<img width="603" height="772" alt="image" src="https://github.com/user-attachments/assets/efe0269e-7b38-40c0-bc3f-482b0bde1027" />
+Each agent is small and specialized; the structured hand-off between them stays 
+auditable (sources, assumptions, confidence, limitations). Graph = understanding, 
+Operations Research = efficiency, causal AI = credibility, human = accountability.
+
+*All demos use synthetic/dummy data only — they illustrate the method, not any 
+real matter. The system flags candidates for human review; it does not decide 
+outcomes.*
+
 [make_pandemic_whatif_dag.py](https://github.com/user-attachments/files/29167170/make_pandemic_whatif_dag.py)# causal-ai-dag
 Causal AI with DAGs — discovery, intervention, and counterfactual what-if simulation (PCMCI, do-calculus). Note: dummy/public/synthetic data only in this project.
 
