@@ -111,6 +111,35 @@ first.)
   do not hold automatically in real data. Where the algorithm cannot orient an
   edge from data alone, that ambiguity is left visible rather than hidden.
 
+
+## Extension: Graph Detection + Operations Research (reviewer triage)
+
+Beyond causal discovery, the same analytical thinking extends to **prioritizing limited expert review time**. A small companion demo (`or_with_charts.py`, synthetic data) shows the full chain:
+
+1. **Graph detection rules** flag relationship-based issues a flat table can't easily catch:
+   - **Peer deviation** — a company's value is far from its industry-peer cluster
+   - **Shared-auditor cluster** — many companies share one auditor (worth watching)
+   - **Cross-filing mismatch** — the same value reported differently across connected filings
+
+2. **Operations Research (0/1 knapsack)** then picks *which* flagged items a human should review first, maximizing total risk caught within a limited review budget (analyst-hours).
+
+3. A **human reviews** the flagged candidates and makes the final decision.
+
+**Why it matters:** Reviewers can't check everything. The graph *understands* relationships; Operations Research *optimizes* how scarce expert time is spent; the human decides. For regulatory and risk work — including structured disclosure and market oversight — this directs limited expert attention to the highest-risk cases, with every step auditable.
+
+The two figures below show the full chain on synthetic data: graph-based rules find relationship issues (Figure 1), and Operations Research optimizes which flagged items a human reviews first within a limited time budget (Figure 2).
+<img width="938" height="700" alt="image" src="https://github.com/user-attachments/assets/6101eda7-8895-460a-ac7d-12560ef16352" />
+Figure 1. Relationship graph for detection. Companies (blue) are linked to their auditors. Graph-based rules flag candidates for review: CIRRUS (red) is a peer outlier — its margin deviates sharply from its industry peers; AudX (amber) is a shared-auditor cluster — it audits three companies; the red dashed line marks a cross-filing mismatch between DELTA and ECHO, where the same item is reported as two different values. Synthetic data only.
+
+
+
+<img width="1126" height="704" alt="image" src="https://github.com/user-attachments/assets/ba133039-11be-4ebe-b73c-00c5f4026d0a" />
+Figure 2. Optimizing limited review time. Given each flag's estimated risk and review cost (analyst-hours) and a fixed review budget (7 hours), an Operations Research optimization (0/1 knapsack) selects the subset that maximizes total risk caught. Green bars are selected for immediate review (7 hours used, risk 10.9 caught); the gray bar is deferred. A human reviews the selected candidates and makes the final decision. Synthetic data only.
+
+
+**Run it:**
+
+
 ## Methods / references
 
 - PCMCI — Runge et al., causal discovery for time series (Tigramite).
