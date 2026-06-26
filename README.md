@@ -22,6 +22,7 @@ Together, small specialized agents are more efficient and more auditable than
 one large black box.
 
 <img width="603" height="772" alt="image" src="https://github.com/user-attachments/assets/efe0269e-7b38-40c0-bc3f-482b0bde1027" />
+
 Each agent is small and specialized; the structured hand-off between them stays 
 auditable (sources, assumptions, confidence, limitations). Graph = understanding, 
 Operations Research = efficiency, causal AI = credibility, human = accountability.
