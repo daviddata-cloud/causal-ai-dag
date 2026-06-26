@@ -1,4 +1,10 @@
 ## Overview: from causal AI to a coordinated agent colony
+> **Part of a larger architecture →** This causal-DAG engine is the reasoning 
+> layer of **Crystalline AI** — a reliable-AI system design where the architecture 
+> itself is a graph (a DAG of specialized agents), Operations Research sets the 
+> optimization goal, a measured loop improves the system, and a human makes every 
+> consequential decision. 
+> **See the full design: https://github.com/daviddata-cloud/Crystalline-AI
 
 This work sits at the meeting point of three ideas:
 
