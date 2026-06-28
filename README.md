@@ -105,10 +105,12 @@ structure. See the overview diagram above.
 ## Results
 
 **Pandemic what-if** — equity falls and credit spreads widen as severity rises:
+<img width="584" height="448" alt="image" src="https://github.com/user-attachments/assets/98ca6ae8-0e40-4bbd-9041-c798777f9cd2" />
 
 <img width="1483" height="881" alt="pandemic_whatif_chart" src="https://github.com/user-attachments/assets/800f9b1e-502b-4b83-a170-c560c0ca636a" />
 
 **Discovered causal graph** — PCMCI recovers the structure directly from data:
+<img width="961" height="687" alt="image" src="https://github.com/user-attachments/assets/cd8cadcb-3ff2-4ca5-8845-f049a002adc3" />
 
 <img width="1380" height="1062" alt="pcmci_clean_graph" src="https://github.com/user-attachments/assets/ddbcf9f9-78e1-4562-bace-8dd96b3d886b" />
 
