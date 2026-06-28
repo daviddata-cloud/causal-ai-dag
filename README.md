@@ -6,7 +6,77 @@
 > consequential decision. 
 > **See the full design: https://github.com/daviddata-cloud/Crystalline-AI
 
-This work sits at the meeting point of three ideas:
+========================================================================================================================================================
+# Causal AI with DAGs — Discovery, Intervention, and Counterfactual Stress Testing
+
+This repository demonstrates a small, reproducible causal-AI engine using synthetic data. It focuses on a question ordinary predictive AI cannot answer well:
+
+> What caused the outcome, and what happens if we intervene?
+
+The repo is the causal reasoning layer behind the broader Crystalline AI architecture. Crystalline AI handles multi-agent workflow design, graph-based triage, Operations Research prioritization, and executive dashboards. This repo focuses on the causal engine: DAG discovery, effect estimation, `do()` interventions, counterfactual propagation, and sensitivity analysis.
+
+**Important scope:** All examples use synthetic or dummy data. The purpose is to demonstrate method, assumptions, and reproducibility — not to forecast real markets, make investment claims, or decide any real case.
+
+---
+
+## What This Repo Demonstrates
+
+### 1. Causal Discovery
+
+The pipeline learns directed, lagged relationships from synthetic time-series data using PCMCI-style causal discovery. Instead of assuming a graph manually, the system recovers candidate causal structure from the data and leaves uncertainty visible for expert review.
+
+### 2. Structural Estimation
+
+After discovery, each variable is modeled using its discovered parents. This produces a transparent structural model that can be inspected, challenged, and improved.
+
+### 3. Intervention with `do()`
+
+The engine applies synthetic interventions such as `do(X = x)` and propagates effects through the fitted graph. This turns the model into a counterfactual simulator rather than a passive prediction tool.
+
+### 4. Sensitivity Analysis
+
+The repo includes dose-response style stress tests that vary intervention severity from low to high and measure how downstream outcomes change. This is useful for risk, policy, oversight, and operational resilience questions.
+
+---
+
+## Why This Matters
+
+Correlation can show that two signals move together. Causal AI asks a harder question: whether changing one variable would change another.
+
+That distinction matters in regulated and policy environments. Analysts often need to know whether a signal is meaningful, whether a rule or shock may propagate, and where assumptions or confounders must be reviewed by human experts.
+
+---
+
+## Dynamic Dashboard Extension
+
+The causal engine can feed executive-facing visualizations:
+
+### Dose-Response Sensitivity Chart
+
+Shows how downstream vulnerability changes as intervention severity increases. This helps reviewers identify potential safety thresholds and nonlinear failure points.
+
+### Vulnerability Tornado Chart
+
+Ranks nodes by systemic importance using graph metrics such as betweenness centrality. This helps prioritize which processes or variables should be reviewed first.
+
+### Intervention ROI Waterfall
+
+Shows stepwise reduction in systemic risk after selected interventions. This translates causal analysis into budget and policy language.
+
+### Cross-Domain Contagion Heatmap
+
+Aggregates causal/risk transmission across workflow domains to reveal hidden cross-functional exposure.
+
+---
+
+## Responsible Use
+
+This repo is a proof-of-concept reference pattern. It is not legal, investment, enforcement, medical, or policy advice. Causal discovery depends on assumptions such as variable selection, time lag design, missing-data handling, and possible unmeasured confounding. Where the method cannot decide, the uncertainty should remain visible for human review.
+
+
+
+
+===================================================================================================================================================================================
 
 **1. Causal AI (the foundation).** Classic causal inference — Directed Acyclic 
 Graphs (DAGs), the do() operator, counterfactuals — answers the question 
