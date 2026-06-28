@@ -76,7 +76,7 @@ This repo is a proof-of-concept reference pattern. It is not legal, investment, 
 
 
 
-===================================================================================================================================================================================
+## Details===================================================================================================================================================================================
 
 **1. Causal AI (the foundation).** Classic causal inference — Directed Acyclic 
 Graphs (DAGs), the do() operator, counterfactuals — answers the question 
