@@ -180,6 +180,39 @@ Figure 2. Optimizing limited review time. Given each flag's estimated risk and r
 
 **Run it:**
 
+## 📊 Enterprise Risk & Executive Dashboards
+
+While core Causal AI focuses on topological discovery (PCMCI) and mathematical interventions (do-calculus), translating these findings into actionable business intelligence is critical. We have developed a suite of dynamic, real-time executive dashboards that run directly on top of the generated DAG. 
+
+These visualizations transform raw mathematical probabilities into systemic risk forecasts and ROI calculations for leadership teams.
+
+### 1. Dose-Response Sensitivity Analysis
+**What it is:** A continuous counterfactual stress test. It visualizes the total systemic collapse (blue bars) and target outcome failure probability (red line) as the severity of a root-cause node increases.
+*   **The Causal Math:** Instead of a binary `do(X=0)` or `do(X=1)`, this simulates a continuous spectrum of interventions `do(X=x)` where `x` scales from 1% to 100% severity, measuring the downstream ripple effect via descendant propagation.
+<img width="953" height="617" alt="image" src="https://github.com/user-attachments/assets/0a897064-f1d8-4430-a04f-4b60e09a0e32" />
+
+*   **Business Value:** Allows auditors and risk managers to set strict, mathematically proven "safety thresholds" before a process reaches a critical breaking point.
+
+### 1. Vulnerability Tornado Chart (Critical Bottlenecks)
+**What it is:** A ranked horizontal bar chart identifying the exact nodes that act as the biggest systemic liabilities.
+*   **The Causal Math:** Calculated using **Betweenness Centrality** across the causal DAG. It identifies the specific variables that serve as the primary bridges for risk contagion.
+*   <img width="885" height="529" alt="image" src="https://github.com/user-attachments/assets/3b53db55-5a12-4d40-b983-f259506c346b" />
+
+*   **Business Value:** Answers the question: *"If we only have budget to audit or upgrade 5 processes this year, which exact 5 provide the highest systemic protection?"*
+
+### 2. Intervention ROI Waterfall
+**What it is:** A step-by-step financial/risk visualization showing how systemic risk decreases as specific interventions are applied.
+*   **The Causal Math:** Visualizes sequential counterfactual subtraction: `Baseline Risk - E[Y | do(Fix_1)] - E[Y | do(Fix_2)]`. 
+<img width="783" height="494" alt="image" src="https://github.com/user-attachments/assets/750b6dfa-88fa-4579-8b71-421ddfe22ddb" />
+
+*   **Business Value:** Proves the **Return on Investment (ROI)** of policy changes. It demonstrates to stakeholders exactly how much systemic risk is mitigated by funding specific upgrades.
+
+### 3. Cross-Domain Contagion Heatmap
+**What it is:** A macro-level matrix showing the probability of failure spreading from one department (e.g., IT Security) to another (e.g., Lab Operations).
+*   **The Causal Math:** Aggregates individual edge weights and probabilities across grouped node clusters (Markov Blankets) to show inter-departmental edge density.
+*   <img width="622" height="608" alt="image" src="https://github.com/user-attachments/assets/7d5d75d0-1bb6-45c2-afd5-ae57f3fd2bac" />
+
+*   **Business Value:** Identifies hidden blind spots where a failure in an administrative silo silently threatens operational execution in an entirely different domain.
 
 ## Methods / references
 
