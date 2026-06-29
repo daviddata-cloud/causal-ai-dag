@@ -107,6 +107,7 @@ python make_domains_chart.py
 
 <!-- IMAGE: graph detection -->
 <img width="851" height="656" alt="image" src="https://github.com/user-attachments/assets/b332df61-36db-46ad-8c51-c5cc4de5b487" />
+<img width="608" height="700" alt="image" src="https://github.com/user-attachments/assets/449b2c0a-064c-41d8-ba58-abae3a25ccba" />
 
 
 *Figure 4. Relationship graph for detection (synthetic data). Rules flag a peer outlier (red), a shared-auditor cluster (amber), and a cross-filing mismatch (red dashed) — relationship problems a flat table would miss.*
