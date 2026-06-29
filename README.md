@@ -12,7 +12,14 @@
 **Causal AI uses a Directed Acyclic Graph (DAG) to show direction** — not just that two things are related, but *which way the influence flows*, how source variables connect through a relationship network to an outcome, and what happens if you intervene. That direction is what gives the analysis **accuracy**: it separates a real cause from a coincidence, and it makes every assumption visible for human review.
 Metadata & tagging (the foundation). Each document carries structured metadata — controlled tags, categories, status, confidence, and wiki-links to related documents. Tags enable meaning-based search; wiki-links become the edges of the relationship graph; together they let the system reason over connections, not just keywords. AI suggests tags and a human approves, keeping them consistent and fast. Good metadata is what makes the graph, search, and reasoning accurate.
 This repo is the **causal reasoning layer** behind the broader [Crystalline AI](https://github.com/daviddata-cloud/Crystalline-AI) architecture.
+**One Interface for Regulated AI
 
+**Crystalline AI is built on the principle of Human-AI Codesign. This system gives knowledge workers one single interface to:
+**Search private institutional documents semantically — not just by keyword.
+**Find relationships between documents, entities, and topics.
+**Detect what evidence is MISSING (Science Gap Map).
+**Challenge AI answers from multiple perspectives (Devil's Advocate).
+**Operate with a full audit trail and strict human review gates.
 *All examples use synthetic or dummy data — to demonstrate the method, not to forecast real markets or decide any real case. The system flags candidates for human review; it does not decide outcomes.*
 
 ---
