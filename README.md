@@ -50,7 +50,9 @@ This repo is the **causal reasoning layer** behind the broader [Crystalline AI](
 ### 3. Intervention with `do()` — test cause, not coincidence
 
 <!-- IMAGE: causal DAG what-if -->
-![Causal DAG what-if simulation](causal_dag_whatif.png)
+
+<img width="940" height="374" alt="image" src="https://github.com/user-attachments/assets/9c8e1539-0c74-455d-824b-a97ffcb0980b" />
+
 *Figure 2. "What-if" intervention (synthetic data). Forcing `do(node = value)` propagates the effect through the directed network, producing a collateral-impact report — showing exactly which downstream nodes are affected and which are not.*
 
 - **Problem:** Stakeholders ask "what happens if we change this policy?" — a question prediction can't answer.
@@ -104,12 +106,14 @@ python make_domains_chart.py
 - **Impact:** The graph understands relationships, OR optimizes scarce expert time, and the human decides — limited attention goes to the highest-risk cases, fully auditable.
 
 <!-- IMAGE: graph detection -->
-![Graph detection — flagged relationships](or_graph_detection.png)
+<img width="851" height="656" alt="image" src="https://github.com/user-attachments/assets/b332df61-36db-46ad-8c51-c5cc4de5b487" />
+
 
 *Figure 4. Relationship graph for detection (synthetic data). Rules flag a peer outlier (red), a shared-auditor cluster (amber), and a cross-filing mismatch (red dashed) — relationship problems a flat table would miss.*
 
 <!-- IMAGE: OR triage bar chart -->
-![Operations Research review triage](or_triage.png)
+<img width="1108" height="680" alt="image" src="https://github.com/user-attachments/assets/291d6e4c-2d94-44cf-a045-a9f35c7e4307" />
+
 *Figure 5. Optimizing limited review time (synthetic data). A 0/1-knapsack optimization selects the flagged items that maximize total risk caught within a fixed review budget. Green = review now; gray = deferred. A human makes the final call.*
 
 ```bash
@@ -150,7 +154,8 @@ The causal engine feeds executive-facing visualizations that translate the direc
 - **Impact:** Translates causal analysis into budget and policy language — how much risk each fix removes.
 
 <!-- IMAGE: waterfall -->
-![Intervention ROI Waterfall](roi_waterfall.png)
+<img width="499" height="368" alt="image" src="https://github.com/user-attachments/assets/ac0b0f8c-a6a9-4b7b-875f-664ca68a7bed" />
+
 *Figure 8. Intervention ROI Waterfall (synthetic data). Illustrative systemic risk reduction from fixing the top bottlenecks in sequence.*
 
 ### Cross-Domain Contagion Heatmap
